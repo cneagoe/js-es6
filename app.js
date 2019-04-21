@@ -154,4 +154,93 @@
 // check if a string includes another
   console.log(val.includes('Johnson'));
 
+// TEMPLATE LITERALS
+const name = 'John';
+const age = 30;
+const job = 'Web developer';
+const city = 'Miami';
+// create a html template from the values above without template strings
+html = '<ul><li>Name: ' + name + '</li><li>Age: ' + age + '</li><li>Job: ' + job + '</li><li>City: ' + city + '</li></ul>'; 
+document.body.innerHTML = html;
+// create a html template from the values above with template literals
+html = `
+  <ul>
+    <li>Name: ${name}</li>
+    <li>Age: ${age}</li>
+    <li>Job: ${job}</li>
+    <li>City: ${city}</li>
+  </ul>
+`;
+// template literals can contain expresions
+
+// ARRAYS AND METHODS
+// Create an array
+const someNumbers = [34, 32, 23];
+const fruit = ['apple', 'banana', 'kivi'];
+// arrays can contain all data types
+let val;
+// print length 
+val = someNumbers.length;
+// check if array
+val = Array.isArray(someNumbers);
+// get a single value
+val = someNumbers[2];
+// get index of value
+val = someNumbers.indexOf(23);
+// mutating arrays 
+// add to end
+someNumbers.push(234);
+// add to front
+someNumbers.unshift(222);
+// take from end
+someNumbers.pop();
+// take from the front
+someNumbers.shift();
+// Splice values
+someNumbers.splice(1,2);
+// reverse 
+someNumbers.reverse();
+// concat
+someNumbers.concat(someNumbers);
+// sort an array of numbers ascending
+someNumbers.sort(function(a, b){
+  return a - b;
+});
+// sort an array of numbers descending
+someNumbers.sort(function(a, b){
+  return b - a;
+});
+// find the values of under 34 in an array
+someNumbers.find(function(num){
+  return num < 34;
+});
+console.log(someNumbers);
+console.log(val);
+
+// OBJECT LITERALS
+// create an object containing a string, an array, another object and a function
+// the function must use an existing field of the current object
+const person = {
+  firstName: 'Steve',
+  hobbies: ['cooking', 'eating'],
+  adress: {
+    city: 'Miamy',
+    state: 'FL'
+  },
+  getBirthYear: function(){
+    return 2019 - this.age;
+  }
+}
+let val;
+val = person;
+// get string value from object
+val = person.firstName;
+val = person['firstName'];
+// get array value from object
+val = person.hobbies[1];
+// get nested object value
+val = person.adress.state;
+// call the function in the object
+val = person.getBirthYear();
+
 
